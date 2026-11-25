@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #051933;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3D Tilt Card Styling */
+.tilt-container {
+  perspective: 1000px;
+}
+.tilt-card {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+}
+.tilt-card:hover,
+.tilt-card:active {
+  transition: transform 0.08s linear;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale3d(1.02, 1.02, 1.02);
+  box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@media (hover: none), (max-width: 767px) {
+  .tilt-card:hover,
+  .tilt-card:active {
+    transform: none;
+    box-shadow: none;
+  }
+}
+.tilt-inner {
+  transform: translateZ(35px);
+  transform-style: preserve-3d;
+}
+
+/* Premium Button Hover Glows */
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.glow-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+.glow-btn:hover::after {
+  transform: scale(1);
+}
+.glow-btn:hover {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Dynamic SVG Dash Drawing Effect */
+.draw-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Portfolio & Glass Card Styles */
+.portfolio-bg {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+.portfolio-tag {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+}
+.social-pill {
+  background-color: #eff6ff;
+  color: #3b82f6;
+  border: 1px solid #dbeafe;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.social-pill:hover {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.glass-card {
+  background: rgba(10, 25, 47, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  background: rgba(3, 12, 26, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* ACCESS by ZIAN community page */
+.access-hide-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.access-hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.access-page {
+  background-color: #04070e;
+}
+
+.access-wave {
+  animation: accessWave 1.1s ease-in-out infinite;
+  transform-origin: bottom;
+}
+@keyframes accessWave {
+  0%, 100% { transform: scaleY(0.45); }
+  50% { transform: scaleY(1); }
+}
+
+/* Active Tab Glow */
+.active-tab {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.1));
+  border-color: rgba(59, 130, 246, 0.6) !important;
+  color: #ffffff !important;
+}
+
+/* Pulse dots */
+.nav-dot, .ticker-dot {
+  width: 7px; height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulseDot 2s infinite;
+}
+@keyframes pulseDot {
+  0%,100%{ box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+  50%{ box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+
+.live-dot {
+  width: 8px; height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10B981;
+  animation: livePulse 2s infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #051933;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}

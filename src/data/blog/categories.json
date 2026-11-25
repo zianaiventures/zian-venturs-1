@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Enterprise AI",
+    "slug": "enterprise-ai",
+    "description": "Enterprise AI deployment, architecture, and reliability."
+  },
+  {
+    "id": "cat-2",
+    "name": "Founder Growth",
+    "slug": "founder-growth",
+    "description": "Audience building, distribution, and startup execution."
+  },
+  {
+    "id": "cat-3",
+    "name": "AI Careers",
+    "slug": "ai-careers",
+    "description": "Navigating career paths, skills, and sequencing in AI."
+  },
+  {
+    "id": "cat-4",
+    "name": "Career Strategy",
+    "slug": "career-strategy",
+    "description": "Timing career pivots, milestones, and professional growth."
+  },
+  {
+    "id": "cat-5",
+    "name": "AI Ecosystem",
+    "slug": "ai-ecosystem",
+    "description": "Global AI macro adoption, bottlenecks, and infrastructure."
+  },
+  {
+    "id": "cat-6",
+    "name": "Future of Work",
+    "slug": "future-of-work",
+    "description": "Workplace transitions, career breaks, and support systems."
+  },
+  {
+    "id": "cat-7",
+    "name": "Engineering & GenAI",
+    "slug": "engineering-genai",
+    "description": "Vibe coding, prototyping, and production constraints."
+  }
+]
